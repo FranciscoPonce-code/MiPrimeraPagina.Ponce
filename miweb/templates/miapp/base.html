@@ -1,7 +1,23 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
     <title>{% block title %}Restaurante{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'css/baguetteBox.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/classic.css' %}">
+    <link rel="stylesheet" href="{% static 'css/classic.date.css' %}">
+    <link rel="stylesheet" href="{% static 'css/classic.time.css' %}">
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+    <link rel="stylesheet" href="{% static 'css/fron-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/superslides.css' %}">
+</head>
+<body>
+    {% block content %}{% endblock %}
+</body>
+</html>
 </head>
 <body>
     <a href="{% url 'index' %}">Inicio</a> |
