@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}Restaurante{% endblock %}</title>
+</head>
+<body>
+    <a href="{% url 'index' %}">Inicio</a> |
+    <a href="{% url 'menu' %}">Menú</a> |
+    <a href="{% url 'reservas' %}">Reservas</a> |
+    <a href="{% url 'buscar_plato' %}">Buscar</a>
+    <hr>
+    {% block contenido %}{% endblock %}
+</body>
+</html>

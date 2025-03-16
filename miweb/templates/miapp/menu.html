@@ -1,0 +1,11 @@
+{% extends 'miapp/base.html' %}
+{% block title %}Menú{% endblock %}
+{% block contenido %}
+    <h1>Nuestro Menú</h1>
+    <ul>
+    {% for plato in platos %}
+        <li>{{ plato.nombre }} - {{ plato.precio }}</li>
+    {% endfor %}
+    </ul>
+    <a href="{% url 'nuevo_plato' %}">Nuevo Plato</a>
+{% endblock %}

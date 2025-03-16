@@ -1,0 +1,17 @@
+{% extends 'miapp/base.html' %}
+{% block title %}Buscar{% endblock %}
+{% block contenido %}
+    <h1>Buscar Plato</h1>
+    <form method="get">
+        {{ form.as_p }}
+        <button type="submit">Buscar</button>
+    </form>
+    {% if resultados %}
+        <h2>Resultados:</h2>
+        <ul>
+        {% for plato in resultados %}
+            <li>{{ plato.nombre }} - {{ plato.precio }}</li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+{% endblock %}

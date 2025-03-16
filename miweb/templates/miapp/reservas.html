@@ -1,0 +1,10 @@
+{% extends 'miapp/base.html' %}
+{% block title %}Reservas{% endblock %}
+{% block contenido %}
+    <h1>Reservar</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Reservar</button>
+    </form>
+{% endblock %}
