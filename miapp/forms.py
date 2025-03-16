@@ -10,7 +10,10 @@ class ReservaForm(forms.ModelForm):
     class Meta:
         model = Reserva
         fields = '__all__'
-
+        widgets = {
+            'fecha': forms.DateInput(attrs={'type': 'date'}),
+            'hora': forms.TimeInput(attrs={'type': 'time'}),
+}
 class ClienteForm(forms.ModelForm):
     class Meta:
         model = Cliente

@@ -1,7 +1,7 @@
 {% extends 'miapp/base.html' %}
-{% block title %}Reservas{% endblock %}
+{% block title %}Reservar Mesa{% endblock %}
 {% block contenido %}
-    <h1>Reservar</h1>
+    <h1>Reservar Mesa</h1>
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}

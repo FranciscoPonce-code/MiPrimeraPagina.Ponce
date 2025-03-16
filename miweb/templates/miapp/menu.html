@@ -1,11 +1,10 @@
 {% extends 'miapp/base.html' %}
-{% block title %}Menú{% endblock %}
+{% block title %}Menú del Día{% endblock %}
 {% block contenido %}
-    <h1>Nuestro Menú</h1>
+    <h1>Menú del Día</h1>
     <ul>
-    {% for plato in platos %}
-        <li>{{ plato.nombre }} - {{ plato.precio }}</li>
-    {% endfor %}
+        {% for plato in platos_del_dia %}
+            <li>{{ plato.nombre }} - {{ plato.descripcion }} - ${{ plato.precio }}</li>
+        {% endfor %}
     </ul>
-    <a href="{% url 'nuevo_plato' %}">Nuevo Plato</a>
 {% endblock %}

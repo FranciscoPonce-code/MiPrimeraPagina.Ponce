@@ -6,17 +6,21 @@ def index(request):
     return render(request, 'miapp/index.html')
 
 def menu(request):
-    platos = Plato.objects.all()
-    return render(request, 'miapp/menu.html', {'platos': platos})
+    platos_del_dia = Plato.objects.filter(es_plato_del_dia=True)
+    return render(request, 'miapp/menu.html', {'platos_del_dia': platos_del_dia})
 
 def reservas(request):
-    form = ReservaForm()
     if request.method == 'POST':
         form = ReservaForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('reservas')
+            return redirect('reserva_exitosa')
+    else:
+        form = ReservaForm()
     return render(request, 'miapp/reservas.html', {'form': form})
+
+def reserva_exitosa(request):
+    return render(request, 'miapp/reserva_exitosa.html')
 
 def nuevo_plato(request):
     form = PlatoForm()
