@@ -1,10 +1,18 @@
 {% extends 'miapp/base.html' %}
+{% load static %}
 {% block title %}Menú del Día{% endblock %}
 {% block contenido %}
     <h1>Menú del Día</h1>
-    <ul>
-        {% for plato in platos_del_dia %}
-            <li>{{ plato.nombre }} - {{ plato.descripcion }} - ${{ plato.precio }}</li>
-        {% endfor %}
-    </ul>
+    <div class="menu-item">
+        <img src="{% static 'img/meat-menu.jpg' %}" alt="carne" class="menu-image">
+        <p class="menu-description">Delicioso plato de carne a la parrilla con guarnición.</p>
+    </div>
+    <div class="menu-item">
+        <img src="{% static 'img/fish-menu.jpg' %}" alt="pescado" class="menu-image">
+        <p class="menu-description">Fresca selección de pescado al horno con vegetales.</p>
+    </div>
+    <div class="menu-item">
+        <img src="{% static 'img/menu-vegetarian.jpg' %}" alt="vegano" class="menu-image">
+        <p class="menu-description">Opción vegetariana con variedad de vegetales y legumbres.</p>
+    </div>
 {% endblock %}
