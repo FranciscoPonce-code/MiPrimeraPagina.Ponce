@@ -114,3 +114,63 @@ footer{
 .menu-item:last-child {
     margin-bottom: 0;
 }
+.reserva-form {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.reserva-form fieldset {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.reserva-form legend {
+    font-weight: bold;
+}
+
+.reserva-form .form-group {
+    margin-bottom: 10px;
+}
+
+.reserva-form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+reserva-form input[type="text"],
+reserva-form input[type="email"],
+reserva-form input[type="date"],
+reserva-form input[type="time"],
+reserva-form input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+reserva-form button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.reserva-form label[for="email"]::after {
+    content: " (opcional)";
+    font-size: 12px;
+    color: #888;
+
+    body {
+        background-image: url("{% static 'img/location.jpg' %}"); /* Reemplaza 'background.jpg' con la ruta de tu imagen */
+        background-repeat: no-repeat; /* Evita que la imagen se repita */
+        background-size: cover; /* Ajusta la imagen para cubrir todo el fondo */
+        background-position: center; /* Centra la imagen en el fondo */
+    }
+}

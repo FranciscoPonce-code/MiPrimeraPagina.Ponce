@@ -2,17 +2,33 @@
 {% load static %}
 {% block title %}Menú del Día{% endblock %}
 {% block contenido %}
-    <h1>Menú del Día</h1>
-    <div class="menu-item">
-        <img src="{% static 'img/meat-menu.jpg' %}" alt="carne" class="menu-image">
-        <p class="menu-description">Delicioso plato de carne a la parrilla con guarnición.</p>
-    </div>
-    <div class="menu-item">
-        <img src="{% static 'img/fish-menu.jpg' %}" alt="pescado" class="menu-image">
-        <p class="menu-description">Fresca selección de pescado al horno con vegetales.</p>
-    </div>
-    <div class="menu-item">
-        <img src="{% static 'img/menu-vegetarian.jpg' %}" alt="vegano" class="menu-image">
-        <p class="menu-description">Opción vegetariana con variedad de vegetales y legumbres.</p>
+    <div class="container">
+        <h1>Menú del Día</h1>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="{% static 'img/meat-menu.jpg' %}" alt="carne" class="card-img-top">
+                    <div class="card-body">
+                        <p class="card-text">Delicioso plato de carne a la parrilla con guarnición.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="{% static 'img/fish-menu.jpg' %}" alt="pescado" class="card-img-top">
+                    <div class="card-body">
+                        <p class="card-text">Fresca selección de pescado al horno con vegetales.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="{% static 'img/menu-vegetarian.jpg' %}" alt="vegano" class="card-img-top">
+                    <div class="card-body">
+                        <p class="card-text">Opción vegetariana con variedad de vegetales y legumbres.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 {% endblock %}

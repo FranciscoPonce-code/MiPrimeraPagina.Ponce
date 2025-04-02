@@ -49,3 +49,10 @@ def buscar_plato(request):
             termino = form.cleaned_data['termino']
             resultados = Plato.objects.filter(nombre__icontains=termino)
     return render(request, 'miapp/buscar.html', {'form': form, 'resultados': resultados})
+
+
+def login_view(request):
+    return render(request, 'miapp/login.html')
+
+def register_view(request):
+    return render(request, 'miapp/registrarse.html')

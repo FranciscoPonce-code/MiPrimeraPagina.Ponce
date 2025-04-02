@@ -1,10 +1,44 @@
 {% extends 'miapp/base.html' %}
-{% block title %}Reservar Mesa{% endblock %}
+{% load static %}
+{% block title %}Reservas{% endblock %}
 {% block contenido %}
-    <h1>Reservar Mesa</h1>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Reservar</button>
-    </form>
+    <div class="container">
+        <h1>Realizar Reserva</h1>
+        <form method="post" class="reserva-form">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="nombre">Nombre *</label>
+                        <input type="text" name="nombre" id="nombre" class="form-control" required>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="email">Correo Electrónico (opcional)</label>
+                        <input type="email" name="email" id="email" class="form-control">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="fecha">Fecha *</label>
+                        <input type="date" name="fecha" id="fecha" class="form-control" required>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="hora">Hora *</label>
+                        <input type="time" name="hora" id="hora" class="form-control" required>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="personas">Número de Personas *</label>
+                <input type="number" name="personas" id="personas" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Reservar</button>
+        </form>
+    </div>
 {% endblock %}

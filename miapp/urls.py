@@ -10,4 +10,6 @@ urlpatterns = [
     path('buscar/', views.buscar_plato, name='buscar_plato'),
     path('reservas/', views.reservas, name='reservas'),
     path('reserva_exitosa/', views.reserva_exitosa, name='reserva_exitosa'),
+    path('login/', views.login_view, name='login'), # Agrega login
+    path('registrarse/', views.register_view, name='registrarse'), # Agrega 
 ]
