@@ -1,0 +1,12 @@
+{% extends 'miapp/base.html' %}
+{% load static %}
+{% block title %}Escribir Reseña{% endblock %}
+{% block contenido %}
+    <h1>Escribir una Reseña</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Publicar Reseña</button>
+    </form>
+    <a href="{% url 'lista_Reseñas' %}" class="btn btn-secondary mt-3">Volver a las Reseñas</a>
+{% endblock %}

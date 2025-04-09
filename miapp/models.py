@@ -1,7 +1,6 @@
 from django.db import models  # noqa: F401
-
-# Create your models here.
-
+from django.contrib.auth.models import User
+#
 from django.db import models  # noqa: F811
 
 class Plato(models.Model):
@@ -29,3 +28,13 @@ class Cliente(models.Model):
 
     def __str__(self):
         return self.nombre
+
+class Reseña(models.Model):  # ¡Esta clase estaba dentro de Cliente!
+    cliente = models.ForeignKey(User, on_delete=models.CASCADE)
+    titulo = models.CharField(max_length=200)
+    contenido = models.TextField()
+    fecha_creacion = models.DateTimeField(auto_now_add=True)
+    calificacion = models.IntegerField(choices=[(1, '1 estrella'), (2, '2 estrellas'), (3, '3 estrellas'), (4, '4 estrellas'), (5, '5 estrellas')])
+
+    def __str__(self):
+        return f"Reseña de {self.cliente.username}: {self.titulo}"

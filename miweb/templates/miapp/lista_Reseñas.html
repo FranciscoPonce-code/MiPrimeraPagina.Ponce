@@ -1,0 +1,24 @@
+{% extends 'miapp/base.html' %}
+{% load static %}
+{% block title %}Reseñas de Clientes{% endblock %}
+{% block contenido %}
+    <h1>Reseñas de Nuestros Clientes</h1>
+    {% for Reseña in Reseñas %}
+        <div class="card mb-3">
+            <div class="card-body">
+                <h5 class="card-title">{{ Reseña.titulo }}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Por {{ Reseña.cliente.username }} el {{ Reseña.fecha_creacion }}</h6>
+                <p class="card-text">{{ Reseña.contenido }}</p>
+                <p class="card-text">Calificación: {% for i in "x"|rjust:Reseña.calificacion %}★{% endfor %}</p>
+            </div>
+        </div>
+    {% empty %}
+        <p>Aún no hay Reseñas. ¡Sé el primero en escribir una!</p>
+    {% endfor %}
+
+    {% if user.is_authenticated %}
+        <a href="{% url 'escribir_Reseña' %}" class="btn btn-primary">Escribir una Reseña</a>
+    {% else %}
+        <p><a href="{% url 'login' %}">Inicia sesión</a> para escribir una Reseña.</p>
+    {% endif %}
+{% endblock %}
