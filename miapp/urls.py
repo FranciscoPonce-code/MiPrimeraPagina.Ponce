@@ -16,4 +16,5 @@ urlpatterns = [
     path('logout/', views.logout_view, name='logout'),
     path('Reseñas/', views.lista_Reseñas, name='lista_Reseñas'),
     path('Reseñas/escribir/', views.escribir_Reseña, name='escribir_Reseña'),
+    path('acerca-de/', views.acerca_de, name='acerca_de'),
 ]

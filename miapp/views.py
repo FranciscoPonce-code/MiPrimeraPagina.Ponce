@@ -103,3 +103,6 @@ def escribir_Reseña(request):
     else:
         form = ReseñaForm()
     return render(request, 'miapp/escribir_Reseña.html', {'form': form})
+
+def acerca_de(request):
+    return render(request, 'miapp/acerca_de.html')
